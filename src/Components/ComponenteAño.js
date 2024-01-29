@@ -17,13 +17,18 @@ const ComponenteAño = ({año}) => {
     }
 
     let cambiarAño = (e, añoFijo) => {
+        if(Number.isInteger){
         setAño(añoFijo);
+        }else{
+            setAño(año);
+        }
     }
 
   return (
     <div>
+        <h2>Ejercicio con Eventos y UseState</h2>
       <h1>console log año</h1>
-      <p>{año}</p>
+      <strong className='label'>{año}</strong>
       &nbsp;
       <p>Sumar años: {añoActual}</p>
       &nbsp;
@@ -31,7 +36,7 @@ const ComponenteAño = ({año}) => {
       &nbsp;
       <button onClick={restarAño}>restar año</button>
       &nbsp;
-      <input type='text' placeholder='cambia el año' onChange={e => cambiarAño(e, e.target.value)}/>
+      <input type='text' placeholder='cambia el año' onChange={e => cambiarAño(e, parseInt(e.target.value))}/>
     </div>
   )
 }
