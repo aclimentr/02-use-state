@@ -1,8 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import MiPrimerEstado from './Components/MiPrimerEstado';
+import ComponenteAño from './Components/ComponenteAño';
 
-
+let newYear = 2024;
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
 
         <h1>Hook useState</h1>
           <MiPrimerEstado/>
+          <ComponenteAño año={newYear}/>
       </header>
     </div>
   );
